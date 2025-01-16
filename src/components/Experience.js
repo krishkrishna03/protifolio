@@ -8,7 +8,7 @@ const experiences = [
     period: "2023 - 2024"
   },
   {
-    title: "Junior Developer Intern at RCTS",
+    title: "Senior Developer Intern at RCTS",
     location: "Hyderabad, India",
     period: "2024 - 2025"
   },
@@ -25,6 +25,7 @@ const experiences = [
   {
     title: "Swecha AI Intern",
     location: "Hyderabad, India",
+    
     period: "2024 - 2024"
   }
 ];
