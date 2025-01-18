@@ -11,14 +11,14 @@ const projects = [
   {
     title: "Weather App",
     description: "Real-time weather application using OpenWeatherMap API",
-    image: "https://via.placeholder.com/400x300",
+    image: "project1.png",
     link: "https://tempcast.netlify.app/",
     tags: ["React", "API Integration", "JavaScript"]
   },
   {
     title: "Portfolio Website",
     description: "Personal portfolio website built with React and Tailwind CSS",
-    image: "https://via.placeholder.com/400x300",
+    image: "project2.png",
     link: "https://srikrishnasai.netlify.app/",
     tags: ["React", "Tailwind CSS", "Framer Motion"]
   }
