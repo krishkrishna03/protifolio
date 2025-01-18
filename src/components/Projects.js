@@ -19,7 +19,7 @@ const projects = [
     title: "Portfolio Website",
     description: "Personal portfolio website built with React and Tailwind CSS",
     image: "https://via.placeholder.com/400x300",
-    link: "https://krishnasaiportfolio.netlify.app/",
+    link: "https://srikrishnasai.netlify.app/",
     tags: ["React", "Tailwind CSS", "Framer Motion"]
   }
 ];
