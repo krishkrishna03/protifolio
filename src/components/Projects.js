@@ -2,25 +2,38 @@ import { motion } from 'framer-motion';
 
 const projects = [
   {
-    title: "Expense Tracker",
-    description: "Full-stack expense tracking application with React, Node.js, and MongoDB",
-    image: "https://via.placeholder.com/400x300",
-    link: "#",
-    tags: ["React", "Node.js", "MongoDB", "Express"]
+    title: "Task Manager",
+    description: "A responsive and user-friendly task management app with localStorage persistence and task filtering.",
+    image: "pro2.png",
+    link: "https://taskmangerk.netlify.app/",
+    tags: ["React", "TailwindCSS", "JavaScript", "LocalStorage"]
   },
   {
     title: "Weather App",
     description: "Real-time weather application using OpenWeatherMap API",
-    image: "project1.png",
+    image: "pro3.png",
     link: "https://tempcast.netlify.app/",
     tags: ["React", "API Integration", "JavaScript"]
   },
   {
     title: "Portfolio Website",
     description: "Personal portfolio website built with React and Tailwind CSS",
-    image: "project2.png",
-    link: "https://srikrishnasai.netlify.app/",
-    tags: ["React", "Tailwind CSS", "Framer Motion"]
+    image: "pro1.png",
+    link: "https://krishnasaiportfolio.netlify.app/",
+    tags: ["React", "TailwindCSS", "Framer Motion"]
+  },
+  {
+    title: "Voice Emotion - Speech Emotion Recognition",
+    description: "A modern web application for analyzing emotions in speech using advanced audio processing and visualization techniques. Built with React, TailwindCSS, and modern web technologies.",
+    image: "pro4.png", // you need to provide or create 'pro4.png' or another suitable image
+    link: "https://voiceemotion.netlify.app/", // replace with your app's live URL
+    tags: [
+      "React 18",
+      "Vite",
+      "Web Audio API",
+      "WaveSurfer.js",
+      "React Router"
+    ]
   }
 ];
 
