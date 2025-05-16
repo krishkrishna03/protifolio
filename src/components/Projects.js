@@ -16,6 +16,13 @@ const projects = [
     tags: ["React", "API Integration", "JavaScript"]
   },
   {
+    title: "NoteHub",
+    description: "A sleek and responsive online note-taking app with user authentication and real-time sync.",
+    image: "pro5.png",
+    link: "https://notepadk.netlify.app/",
+    tags: ["React", "API Integration", "JavaScript"]
+  },
+  {
     title: "Portfolio Website",
     description: "Personal portfolio website built with React and Tailwind CSS",
     image: "pro1.png",
@@ -28,11 +35,7 @@ const projects = [
     image: "pro4.png", // you need to provide or create 'pro4.png' or another suitable image
     link: "https://voiceemotion.netlify.app/", // replace with your app's live URL
     tags: [
-      "React 18",
-      "Vite",
-      "Web Audio API",
-      "WaveSurfer.js",
-      "React Router"
+      "React 18","Vite","Web Audio API","WaveSurfer.js","React Router"
     ]
   }
 ];
