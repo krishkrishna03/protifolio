@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, Eye, Filter } from 'lucide-react';
 
@@ -10,56 +10,51 @@ const Projects = () => {
 
   const projects = [
     {
-  id: 1,
-  title: "Task Manager",
-  category: "web",
-  description: "A responsive and user-friendly task management app with localStorage persistence and task filtering.",
-  longDescription: "Developed a sleek and responsive task manager application using React and TailwindCSS. It allows users to create, edit, delete, and filter tasks. Tasks are saved locally using browser localStorage, ensuring persistence even after refreshing the page. Clean UI with efficient task filtering and status management.",
-  image: "pro1.png",
-  technologies: ["React", "TailwindCSS", "JavaScript", "LocalStorage"],
-  github: "#",
-  demo: "https://taskmangerk.netlify.app/",
-  features: ["Task Creation & Editing", "Task Filtering", "LocalStorage Persistence", "Responsive Design", "User-friendly Interface"]
-},
+      id: 1,
+      title: "Task Manager",
+      category: "web",
+      description: "A responsive and user-friendly task management app with localStorage persistence and task filtering.",
+      longDescription: "Developed a sleek and responsive task manager application using React and TailwindCSS. It allows users to create, edit, delete, and filter tasks. Tasks are saved locally using browser localStorage, ensuring persistence even after refreshing the page. Clean UI with efficient task filtering and status management.",
+      image: "pro1.png",
+      technologies: ["React", "TailwindCSS", "JavaScript", "LocalStorage"],
+      github: "https://github.com/krishkrishna03/Task_manager.git",
+      demo: "https://taskmangerk.netlify.app/",
+      features: ["Task Creation & Editing", "Task Filtering", "LocalStorage Persistence", "Responsive Design", "User-friendly Interface"]
+    },
+    {
+      id: 2,
+      title: "COVID-19 Tracker",
+      category: "frontend",
+      description: "Interactive COVID-19 tracker with real-time global and country-specific data visualization.",
+      longDescription: "COVID-19 Tracker is a powerful React-based web application that displays real-time and historical COVID-19 data from around the world. It features global and country-specific statistics, interactive visualizations with Chart.js and Recharts, an interactive world map via Leaflet, and dark/light mode toggle. Users can explore the evolution of the pandemic, compare countries, and view historical trends through a modern and responsive UI. Data is fetched from the reliable disease.sh API.",
+      image: "pro6.png", // Replace with actual image file name or path
+      technologies: [
+        "React",
+        "Chart.js",
+        "Recharts",
+        "Leaflet",
+        "Axios",
+        "Disease.sh API",
+        "React CountUp",
+        "React Select",
+        "Date-fns"
+      ],
+      github: "https://github.com/your-username/covid19-tracker", // Replace with actual GitHub repo URL
+      demo: "https://covid19trackerk.netlify.app/", // Replace with deployed demo link if available
+      features: [
+        "Global & Country-specific COVID-19 Statistics",
+        "12+ Interactive Charts & Graphs",
+        "Historical Data Visualization",
+        "Interactive World Map with Leaflet",
+        "Country Comparison",
+        "Dark/Light Mode Toggle",
+        "Responsive Design",
+        "Real-time Updates via disease.sh API"
+      ]
+    },
 
     {
       id: 2,
-      title: "Task Management App",
-      category: "web",
-      description: "A collaborative task management application with team features, real-time updates, and progress tracking.",
-      longDescription: "Developed a team collaboration tool with drag-and-drop task boards, real-time synchronization, team member assignments, deadline tracking, and project analytics. Features include file attachments, comments, and notification system.",
-      image: "https://images.pexels.com/photos/3184295/pexels-photo-3184295.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "TypeScript", "Socket.io", "PostgreSQL", "Redis"],
-      github: "#",
-      demo: "#",
-      features: ["Drag & Drop Interface", "Real-time Collaboration", "File Attachments", "Team Analytics", "Deadline Tracking"]
-    },
-    {
-      id: 3,
-      title: "Weather Mobile App",
-      category: "mobile",
-      description: "A beautiful weather application with location-based forecasts, interactive maps, and weather alerts.",
-      longDescription: "Created a cross-platform mobile app providing accurate weather forecasts, interactive weather maps, severe weather alerts, and location-based recommendations. Features include offline data caching and customizable widgets.",
-      image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React Native", "TypeScript", "Redux", "OpenWeather API"],
-      github: "#",
-      demo: "#",
-      features: ["Location Services", "Weather Maps", "Offline Caching", "Push Notifications", "Custom Widgets"]
-    },
-    {
-      id: 4,
-      title: "Social Media Dashboard",
-      category: "web",
-      description: "An analytics dashboard for social media management with data visualization and automated reporting.",
-      longDescription: "Built a comprehensive social media management platform with multi-platform integration, analytics dashboard, post scheduling, engagement tracking, and automated report generation. Includes sentiment analysis and competitor tracking.",
-      image: "https://images.pexels.com/photos/1591062/pexels-photo-1591062.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["Vue.js", "D3.js", "Node.js", "MongoDB", "Chart.js"],
-      github: "#",
-      demo: "#",
-      features: ["Multi-platform Integration", "Analytics Dashboard", "Post Scheduling", "Sentiment Analysis", "Automated Reports"]
-    },
-    {
-      id: 5,
       title: "Learning Management System",
       category: "fullstack",
       description: "A comprehensive LMS with course creation, student progress tracking, and interactive learning tools.",
@@ -71,34 +66,95 @@ const Projects = () => {
       features: ["Course Authoring", "Video Streaming", "Progress Tracking", "Interactive Quizzes", "Certificate Generation"]
     },
     {
-      id: 6,
-      title: "Fitness Tracking App",
-      category: "mobile",
-      description: "A comprehensive fitness app with workout tracking, nutrition planning, and social features.",
-      longDescription: "Created a mobile fitness application featuring workout tracking, exercise libraries, nutrition planning, progress analytics, social challenges, and integration with wearable devices. Includes AI-powered workout recommendations.",
-      image: "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["Flutter", "Firebase", "TensorFlow Lite", "HealthKit"],
-      github: "#",
-      demo: "#",
-      features: ["Workout Tracking", "Nutrition Planning", "Social Challenges", "Wearable Integration", "AI Recommendations"]
+      id: 3,
+      title: "Pong Game",
+      category: "frontend",
+      description: "Classic Pong game built with HTML, CSS, and JavaScript.",
+      longDescription: "A simple and fun Pong game created using vanilla HTML, CSS, and JavaScript. The left paddle is controlled by the player's mouse, while the right paddle is managed by a basic AI. The game features smooth paddle and ball movement, collision detection, and score tracking, offering a nostalgic arcade experience.",
+      image: "pro4.png", // Replace with actual image file name or path
+      technologies: ["HTML", "CSS", "JavaScript"],
+      github: "#", // Replace with actual GitHub repo URL
+      demo: "https://krishkrishna03.github.io/Pong_game/", // Replace with actual demo URL if hosted
+      features: [
+        "Classic Pong Gameplay",
+        "Mouse-Controlled Paddle",
+        "Basic AI Opponent",
+        "Smooth Movement",
+        "Collision Detection",
+        "Score Tracking"
+      ]
     },
     {
-  id: 7,
-  title: "Weather App",
-  category: "frontend",
-  description: "Real-time weather application using OpenWeatherMap API.",
-  longDescription: "Built a dynamic and responsive weather application using React and OpenWeatherMap API. Users can search for any city to get real-time weather updates including temperature, humidity, weather conditions, and more. The app features a clean UI with API integration and error handling for invalid locations.",
-  image: "pro3.png",
-  technologies: ["React", "API Integration", "JavaScript"],
-  github: "#",
-  demo: "https://tempcast.netlify.app/",
-  features: ["Real-time Weather Data", "API Integration", "Responsive Design", "City Search", "Error Handling"]
-}
+      id: 4,
+      title: "Weather App",
+      category: "frontend",
+      description: "Real-time weather application using OpenWeatherMap API.",
+      longDescription: "Built a dynamic and responsive weather application using React and OpenWeatherMap API. Users can search for any city to get real-time weather updates including temperature, humidity, weather conditions, and more. The app features a clean UI with API integration and error handling for invalid locations.",
+      image: "pro2.png",
+      technologies: ["React", "API Integration", "JavaScript"],
+      github: "#",
+      demo: "https://tempcast.netlify.app/",
+      features: ["Real-time Weather Data", "API Integration", "Responsive Design", "City Search", "Error Handling"]
+    }, {
+      id: 5,
+      title: "MiNote - Note Taking App",
+      category: "fullstack",
+      description: "Elegant full-stack note-taking app with rich text editor and JWT-based authentication.",
+      longDescription: "MiNote is a beautiful and modern note-taking application built with React, Node.js, and Express. It features secure user authentication using JWT, rich text editing with React Quill, and a responsive UI built with Tailwind CSS and Framer Motion. Notes are organized with categories, searchable, and auto-saved as you type. The project demonstrates full-stack development with a clean architecture and intuitive user experience.",
+      image: "pro3.png", // Replace with actual image file name or path
+      technologies: [
+        "React",
+        "Node.js",
+        "Express",
+        "Tailwind CSS",
+        "React Quill",
+        "JWT",
+        "Framer Motion",
+        "Axios"
+      ],
+      github: "#", // Replace with actual GitHub repo URL
+      demo: "https://notepadk.netlify.app/", // Replace with deployed demo link if available
+      features: [
+        "Rich Text Editor", "JWT Authentication", "Private Notes per User", "Category Organization", "Search & Filter", "Auto-save", "Responsive Design", "Dark Mode", "Real-time Updates"
+      ]
+    }, {
+      id: 6,
+      title: "Productivity Hub",
+      category: "fullstack",
+      description: "A modern productivity dashboard with tools like summarizer, speech-to-text, sentiment analysis, and task manager.",
+      longDescription: "Productivity Hub is a responsive and elegant productivity web app built with React 18 + TypeScript and Tailwind CSS. It includes powerful tools such as Text Summarizer, Text-to-Speech, Speech-to-Text, Sentiment Analysis, and Task Manager, all working client-side with Web APIs and Local Storage. Designed with accessibility and performance in mind, it features modern UI design, gradient themes, real-time updates, and browser compatibility. Built with Vite, it boasts fast loading and is ready for deployment.",
+      image: "pro5.png", // Replace with actual image file name or path
+      technologies: [
+        "React 18",
+        "TypeScript",
+        "Tailwind CSS",
+        "Vite",
+        "React Router",
+        "Lucide React",
+        "Web Speech API",
+        "Local Storage"
+      ],
+      github: "#", // Replace with actual GitHub repo URL
+      demo: "https://productivityhubk.netlify.app/", // Replace with deployed URL if hosted (e.g., Netlify or Vercel)
+      features: [
+        "Text Summarizer with File Upload",
+        "Text-to-Speech with Voice Settings",
+        "Real-time Speech-to-Text",
+        "Sentiment Analysis with Visual Output",
+        "Task Manager with Priority & Due Dates",
+        "Responsive Modern UI",
+        "Smooth Animations & Gradient Themes",
+        "Client-side Storage and Privacy Focused",
+        "Accessibility & ARIA Compliance"
+      ]
+    }
+
+
 
   ];
 
-  const filteredProjects = selectedCategory === 'all' 
-    ? projects 
+  const filteredProjects = selectedCategory === 'all'
+    ? projects
     : projects.filter(project => project.category === selectedCategory);
 
   return (
@@ -132,11 +188,10 @@ const Projects = () => {
             <motion.button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
-                selectedCategory === category
-                  ? 'bg-gradient-to-r from-blue-600 to-teal-600 text-white'
-                  : 'bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700/50'
-              }`}
+              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${selectedCategory === category
+                ? 'bg-gradient-to-r from-blue-600 to-teal-600 text-white'
+                : 'bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700/50'
+                }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -149,7 +204,7 @@ const Projects = () => {
         </motion.div>
 
         {/* Projects Grid */}
-        <motion.div 
+        <motion.div
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           layout
         >
@@ -173,7 +228,7 @@ const Projects = () => {
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
-                  
+
                   {/* Overlay Actions */}
                   <motion.div
                     className="absolute inset-0 bg-slate-900/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4"
@@ -217,7 +272,7 @@ const Projects = () => {
                       {project.category}
                     </span>
                   </div>
-                  
+
                   <p className="text-slate-400 text-sm mb-4 leading-relaxed">
                     {project.description}
                   </p>
@@ -295,7 +350,7 @@ const Projects = () => {
                     <X size={24} />
                   </button>
                 </div>
-                
+
                 <div className="p-8">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-3xl font-bold text-white">{selectedProject.title}</h3>
@@ -303,7 +358,7 @@ const Projects = () => {
                       {selectedProject.category}
                     </span>
                   </div>
-                  
+
                   <p className="text-slate-300 leading-relaxed mb-6">
                     {selectedProject.longDescription}
                   </p>
