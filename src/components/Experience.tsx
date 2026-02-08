@@ -5,103 +5,197 @@ import { Building, Calendar, MapPin, ExternalLink } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
-      title: "Junior Full Stack Developer",
-      company: "RCTS LAB",
-      location: "Hyderabad, India",
-      period: "2023 - 2024",
-      type: "Internship",
-      description: "Leading development of scalable web applications using React, Node.js, and cloud technologies. Mentoring junior developers and architecting solutions for enterprise clients.",
+      title: "Senior Developer Intern | Research Intern",
+      company: "RCTS, IIIT-Hyderabad",
+      location: "Kakinada, Andhra Pradesh, India",
+      period: "August 2024 - April 2025",
+      type: "Research Internship",
+      description: "Leading ML/NLP research projects at IIIT Hyderabad's Research Center. Working on cutting-edge AI solutions, building intelligent systems, and collaborating with research teams on innovative projects.",
       achievements: [
-        "Improved application performance by 40% through optimization",
-        "Led a team of 5 developers on multiple projects",
-        "Built microservices architecture serving 100K+ users"
+        "Developed ML/NLP models for real-world applications",
+        "Collaborated with research teams on AI projects",
+        "Built scalable web applications using MERN stack",
+        "Contributed to research publications and technical documentation"
       ],
-      technologies: ["React", "Node.js", "AWS", "Docker", "PostgreSQL", "Redis"],
+      technologies: ["Python", "NLP", "Machine Learning", "React", "Node.js", "MongoDB", "TensorFlow"],
       color: "from-blue-600 to-blue-700"
     },
     {
-      title: "Senior Full Stack Developer",
-      company: "RCTS LAB",
-      location: "Hyderabad, India",
-      period: "2024 - 2025",
+      title: "Django Intern",
+      company: "Perpex",
+      location: "Remote, India",
+      period: "July 2025 - September 2025",
       type: "Internship",
-      description: "Developed and maintained multiple web applications for HackStad Website. Collaborated with cross-functional teams to deliver high-quality products on time.",
+      description: "Developed backend applications using Django framework. Built RESTful APIs, implemented database models, and created server-side logic for web applications.",
       achievements: [
-        "Built responsive web applications with 99.9% uptime",
-        "Integrated third-party APIs and payment gateways",
-        "Reduced load times by 50% through code optimization",
-        "Maintained legacy codebases and upgraded technologies"
+        "Built robust backend systems with Django",
+        "Designed and implemented RESTful APIs",
+        "Optimized database queries for better performance",
+        "Integrated third-party services and APIs"
       ],
-      technologies: ["React", "Express.js", "MongoDB", "Python", "Django"],
+      technologies: ["Python", "Django", "PostgreSQL", "REST APIs", "Git"],
+      color: "from-green-600 to-green-700"
+    },
+    {
+      title: "Android Developer",
+      company: "EduSkills Foundation",
+      location: "Hyderabad, Telangana, India",
+      period: "January 2025 - March 2025",
+      type: "Internship",
+      description: "Developed Android applications using Java and Android SDK. Created user interfaces, implemented app logic, and integrated backend services for mobile apps.",
+      achievements: [
+        "Built native Android applications from scratch",
+        "Implemented modern Android UI/UX patterns",
+        "Integrated RESTful APIs and cloud services",
+        "Optimized app performance and user experience"
+      ],
+      technologies: ["Java", "Android SDK", "XML", "REST APIs", "Git"],
       color: "from-teal-600 to-teal-700"
     },
     {
-      title: "Artificial Intelligence Intern",
-      company: "Internship Studio",
-      location: "Pune, India",
-      period: "2024 - 2024",
+      title: "Java Full Stack Developer",
+      company: "EduSkills Foundation",
+      location: "Hyderabad, Telangana, India",
+      period: "October 2024 - December 2024",
       type: "Internship",
-      description: "Worked on real-world AI and machine learning projects, focusing on data preprocessing, model development, and deployment. Gained practical experience in building intelligent solutions and integrating AI models into applications.",
+      description: "Worked on full-stack Java applications. Built both frontend and backend components using Java technologies, Spring Boot, and modern web frameworks.",
       achievements: [
-        "Built and fine-tuned machine learning models for classification and prediction tasks",
-        "Collaborated with the data science team to clean and analyze datasets",
-        "Implemented AI features using Python libraries such as Scikit-learn and TensorFlow",
-        "Contributed to the deployment of a sentiment analysis model as an API"
+        "Developed full-stack applications using Java and Spring Boot",
+        "Created responsive web interfaces with modern frameworks",
+        "Implemented secure authentication and authorization",
+        "Built RESTful web services and microservices"
       ],
-      technologies: ["Python", "TensorFlow", "Scikit-learn", "Pandas", "NumPy", "Jupyter", "Git"],
-
+      technologies: ["Java", "Spring Boot", "MySQL", "HTML/CSS", "JavaScript", "REST APIs"],
+      color: "from-red-600 to-red-700"
+    },
+    {
+      title: "Web Development Intern",
+      company: "EduSkills Foundation",
+      location: "Hyderabad, Telangana, India",
+      period: "June 2024 - September 2024",
+      type: "Internship",
+      description: "Built responsive web applications using modern frontend and backend technologies. Worked on creating user-friendly interfaces and implementing server-side logic.",
+      achievements: [
+        "Developed responsive websites with HTML, CSS, and JavaScript",
+        "Built dynamic web applications using React",
+        "Implemented backend APIs with Node.js and Express",
+        "Deployed applications to cloud platforms"
+      ],
+      technologies: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express", "MongoDB"],
+      color: "from-blue-500 to-blue-600"
+    },
+    {
+      title: "Data Analyst",
+      company: "UptoSkills",
+      location: "Remote, India",
+      period: "December 2024 - March 2025",
+      type: "Internship",
+      description: "Analyzed structured and unstructured data to derive actionable insights. Created dashboards, performed statistical analysis, and automated reporting processes.",
+      achievements: [
+        "Cleaned and transformed large datasets using Python and Excel",
+        "Created interactive dashboards with Power BI and Tableau",
+        "Performed exploratory data analysis and statistical summaries",
+        "Automated data reports reducing manual work by 30%"
+      ],
+      technologies: ["Python", "Pandas", "NumPy", "Power BI", "Excel", "SQL", "Matplotlib"],
+      color: "from-yellow-600 to-yellow-700"
+    },
+    {
+      title: "Machine Learning Mentor",
+      company: "K-HUB (KIET)",
+      location: "Kakinada, Andhra Pradesh, India",
+      period: "October 2023 - March 2025",
+      type: "Mentorship",
+      description: "Mentored students in Machine Learning concepts and projects. Conducted workshops, guided project development, and helped students build ML solutions.",
+      achievements: [
+        "Mentored 50+ students in ML and AI concepts",
+        "Conducted hands-on workshops on ML algorithms",
+        "Guided students through real-world ML projects",
+        "Helped students prepare for AI/ML careers"
+      ],
+      technologies: ["Python", "Scikit-learn", "TensorFlow", "Jupyter", "Data Science"],
       color: "from-purple-600 to-purple-700"
     },
     {
-  title: "Speech Analytics Intern",
-  company: "LRCT LAB",
-  location: "Hyderabad, India",
-  period: "2024 - 2025",
-  type: "Internship",
-  description: "Contributed to research and development in speech processing and analytics. Focused on audio data preprocessing, speech-to-text conversion, and extraction of meaningful insights from conversational data.",
-  achievements: [
-    "Developed a speech-to-text pipeline using pre-trained models",
-    "Extracted key conversational features such as pitch, sentiment, and keywords",
-    "Worked with large-scale audio datasets and improved preprocessing efficiency",
-    "Built visual dashboards to display analytics from speech data"
-  ],
-  technologies: ["Python", "SpeechRecognition", "PyDub", "NLTK", "Pandas", "Matplotlib", "Git"],
-  color: "from-blue-600 to-blue-700"
-},
-{
-  title: "Swecha AI Intern",
-  company: "Swecha IIIT-H",
-  location: "Hyderabad, India",
-  period: "2024 - 2024",
-  type: "Internship",
-  description: "Worked on socially impactful AI projects involving machine learning and data analysis. Gained hands-on experience with open-source tools, model training, and real-world data challenges in collaborative tech environments.",
-  achievements: [
-    "Contributed to AI solutions for community-driven applications",
-    "Built machine learning models for image and text classification tasks",
-    "Collaborated with mentors to implement ethical and inclusive AI practices",
-    "Participated in AI workshops and hackathons organized by Swecha"
-  ],
-  technologies: ["Python", "Scikit-learn", "TensorFlow", "OpenCV", "Pandas", "Matplotlib", "Git"],
-  color: "from-green-600 to-green-700"
-},{
-  title: "Data Analytics Intern",
-  company: "Uptoskills",
-  location: "Remote / India",
-  period: "2024 - 2025",
-  type: "Internship",
-  description: "Worked on analyzing structured and unstructured data to derive actionable insights. Assisted in data cleaning, exploratory data analysis, and dashboard creation to support business decision-making.",
-  achievements: [
-    "Cleaned and transformed large datasets for analysis using Python and Excel",
-    "Created interactive dashboards using Power BI and Tableau",
-    "Performed exploratory data analysis and statistical summaries",
-    "Automated data reports to reduce manual work by 30%"
-  ],
-  technologies: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Power BI", "Excel", "SQL"],
-  color: "from-yellow-600 to-yellow-700"
-}
-
-
-
+      title: "Cloud Computing Intern",
+      company: "Learnflu",
+      location: "Bengaluru, Karnataka, India",
+      period: "November 2024 - January 2025",
+      type: "Internship",
+      description: "Worked with cloud platforms and technologies. Deployed applications, managed cloud infrastructure, and implemented cloud-based solutions.",
+      achievements: [
+        "Deployed applications on Google Cloud Platform",
+        "Managed cloud infrastructure and resources",
+        "Implemented CI/CD pipelines for automated deployments",
+        "Optimized cloud costs and performance"
+      ],
+      technologies: ["GCP", "Docker", "Kubernetes", "CI/CD", "Cloud Storage"],
+      color: "from-blue-400 to-blue-500"
+    },
+    {
+      title: "Speech Processing Intern",
+      company: "Speech Processing Lab, IIITH",
+      location: "Hyderabad, Telangana, India",
+      period: "August 2024 - January 2025",
+      type: "Research Internship",
+      description: "Worked on speech processing and analytics research. Developed speech-to-text pipelines, extracted conversational features, and built analytics dashboards.",
+      achievements: [
+        "Developed speech-to-text pipeline using pre-trained models",
+        "Extracted conversational features like pitch and sentiment",
+        "Worked with large-scale audio datasets",
+        "Built visual dashboards for speech analytics"
+      ],
+      technologies: ["Python", "SpeechRecognition", "PyDub", "NLTK", "Pandas", "Matplotlib"],
+      color: "from-teal-500 to-teal-600"
+    },
+    {
+      title: "AI/ML Intern",
+      company: "Internship Studio",
+      location: "Pune, Maharashtra, India",
+      period: "August 2024 - October 2024",
+      type: "Internship",
+      description: "Worked on AI and machine learning projects. Built ML models, performed data preprocessing, and deployed AI solutions for real-world applications.",
+      achievements: [
+        "Built machine learning models for classification tasks",
+        "Implemented AI features using TensorFlow and Scikit-learn",
+        "Collaborated with data science teams on projects",
+        "Deployed sentiment analysis model as an API"
+      ],
+      technologies: ["Python", "TensorFlow", "Scikit-learn", "Pandas", "NumPy", "Jupyter"],
+      color: "from-orange-600 to-orange-700"
+    },
+    {
+      title: "Summer Intern",
+      company: "Swecha Telangana",
+      location: "Hyderabad, Telangana, India",
+      period: "May 2024 - June 2024",
+      type: "Internship",
+      description: "Worked on socially impactful AI projects. Built ML models for community applications and contributed to open-source AI initiatives.",
+      achievements: [
+        "Contributed to AI solutions for community-driven applications",
+        "Built ML models for image and text classification",
+        "Implemented ethical and inclusive AI practices",
+        "Participated in AI workshops and hackathons"
+      ],
+      technologies: ["Python", "Scikit-learn", "TensorFlow", "OpenCV", "Pandas"],
+      color: "from-green-500 to-green-600"
+    },
+    {
+      title: "Junior Developer Intern | Research Intern",
+      company: "RCTS, IIIT-Hyderabad",
+      location: "Hyderabad, Telangana, India",
+      period: "August 2023 - April 2024",
+      type: "Research Internship",
+      description: "Started research career at IIIT Hyderabad. Worked on AI/ML projects, learned research methodologies, and contributed to technical solutions.",
+      achievements: [
+        "Gained hands-on experience with AI/ML research",
+        "Contributed to multiple research projects",
+        "Developed full-stack applications for research tools",
+        "Learned research methodologies and best practices"
+      ],
+      technologies: ["Python", "Machine Learning", "React", "Node.js", "MongoDB"],
+      color: "from-blue-500 to-blue-600"
+    }
   ];
 
   return (
@@ -262,18 +356,18 @@ const Experience = () => {
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
             {[
               {
-                degree: "Bachelor of Technology",
-                field: "Computer Science Engineering",
-                institution: "ABC University",
-                year: "2018-2022",
-                grade: "CGPA: 8.5/10"
+                degree: "Bachelor of Technology - BTech",
+                field: "Computer Science (Artificial Intelligence)",
+                institution: "Kakinada Institute of Engineering & Technology (KIET)",
+                year: "2021 - 2025",
+                grade: "Graduating 2025"
               },
               {
                 degree: "Higher Secondary",
-                field: "Science (PCM)",
-                institution: "XYZ School",
-                year: "2016-2018",
-                grade: "Percentage: 92%"
+                field: "English Medium School",
+                institution: "Sasi Junior College",
+                year: "2019",
+                grade: "Completed 2019"
               }
             ].map((edu, index) => (
               <motion.div

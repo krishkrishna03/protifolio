@@ -44,14 +44,14 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      value: "+91 85228 51271",
+      value: "+91 8522851271",
       href: "tel:+918522851271",
       color: "from-teal-500 to-teal-600"
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "Bangalore, India",
+      value: "Kakinada, Andhra Pradesh, India",
       href: "#",
       color: "from-purple-500 to-purple-600"
     }
@@ -72,7 +72,7 @@ const Contact = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-teal-400 mx-auto rounded-full" />
           <p className="text-slate-400 mt-6 max-w-2xl mx-auto">
-            Let's discuss your next project or just say hello. I'm always open to new opportunities and interesting conversations.
+            Open to AI/ML Engineering, Data Science, Software Development, and Full-Stack roles. Let's collaborate on building something amazing!
           </p>
         </motion.div>
 
@@ -88,9 +88,8 @@ const Contact = () => {
             <div>
               <h3 className="text-3xl font-bold text-white mb-6">Let's Talk</h3>
               <p className="text-slate-400 text-lg leading-relaxed mb-8">
-                I'm currently available for freelance work and full-time opportunities. 
-                Whether you're a company looking to hire, or you're someone looking to build something amazing, 
-                I'd love to hear from you.
+                Currently open to internship or full-time roles in AI/ML Engineering, Data Science, Software Development,
+                and Full-Stack positions. Whether you're hiring or building cool tech, I'd love to connect and collaborate!
               </p>
             </div>
 
@@ -309,10 +308,10 @@ const Contact = () => {
           viewport={{ once: true }}
         >
           <p className="text-slate-400">
-            © 2024 Krishna. Built with React, TypeScript, and Tailwind CSS.
+            © 2025 Patnala Sri Krishna Sai. Built with React, TypeScript, and Tailwind CSS.
           </p>
           <p className="text-slate-500 text-sm mt-2">
-            Designed and developed with ❤️ for amazing user experiences.
+            AI/ML Engineer | Full Stack Developer | Always Learning
           </p>
         </motion.div>
       </div>

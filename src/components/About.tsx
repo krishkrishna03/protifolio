@@ -4,10 +4,10 @@ import { Code, Lightbulb, Target, Users } from 'lucide-react';
 
 const About = () => {
   const stats = [
-    { number: "3+", label: "Years Experience", icon: Target },
-    { number: "50+", label: "Projects Completed", icon: Code },
-    { number: "25+", label: "Happy Clients", icon: Users },
-    { number: "100%", label: "Commitment", icon: Lightbulb },
+    { number: "2+", label: "Years Experience", icon: Target },
+    { number: "15+", label: "Internships", icon: Users },
+    { number: "30+", label: "Projects Completed", icon: Code },
+    { number: "5+", label: "Certifications", icon: Lightbulb },
   ];
 
   return (
@@ -35,21 +35,22 @@ const About = () => {
             className="space-y-6"
           >
             <h3 className="text-2xl md:text-3xl font-semibold text-slate-200">
-              Crafting Digital Experiences with Passion
+              Building Intelligent Solutions with AI & Full-Stack Development
             </h3>
             <p className="text-lg text-slate-400 leading-relaxed">
-              I'm a dedicated Full Stack Developer with a passion for creating innovative web solutions. 
-              With expertise in modern technologies like React, Node.js, and cloud platforms, I transform 
-              ideas into robust, scalable applications.
+              I'm an AI/ML Engineer and Full Stack Developer specializing in building intelligent,
+              scalable software solutions. With expertise in Natural Language Processing, Computer Vision,
+              and the MERN stack, I transform complex problems into innovative applications that make a real impact.
             </p>
             <p className="text-lg text-slate-400 leading-relaxed">
-              My journey in software development has been driven by curiosity and a commitment to 
-              continuous learning. I believe in writing clean, maintainable code and delivering 
-              exceptional user experiences that make a difference.
+              Currently working as a Senior Developer at IIIT Hyderabad's RCTS Lab, I've completed multiple
+              internships across AI/ML, Cloud Computing, and Full-Stack Development. My journey is driven by
+              curiosity, continuous learning, and a passion for creating solutions that bridge technology and
+              real-world challenges.
             </p>
-            
+
             <div className="flex flex-wrap gap-4 pt-4">
-              {['Problem Solving', 'Team Collaboration', 'Innovation', 'Quality Focus'].map((skill, index) => (
+              {['Machine Learning', 'NLP & Computer Vision', 'Cloud Computing', 'MERN Stack'].map((skill, index) => (
                 <motion.span
                   key={skill}
                   className="px-4 py-2 bg-slate-800/50 rounded-full text-sm font-medium border border-slate-700"
@@ -109,10 +110,10 @@ const About = () => {
               <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-400 to-teal-400 rounded-full" />
               
               {[
-                { year: "2021", title: "Started Programming", desc: "Began my journey with Python and web development" },
-                { year: "2022", title: "First Internship", desc: "Gained hands-on experience with React and Node.js" },
-                { year: "2023", title: "Full Stack Developer", desc: "Joined a startup and built multiple web applications" },
-                { year: "2024", title: "Senior Developer", desc: "Leading projects and mentoring junior developers" },
+                { year: "2021", title: "Started B.Tech in AI", desc: "Began Computer Science (AI) at KIET, focusing on Python and ML fundamentals" },
+                { year: "2023", title: "Research at IIIT-H", desc: "Junior Developer Intern at RCTS Lab, started AI/ML journey" },
+                { year: "2024", title: "AI/ML Specialist", desc: "Multiple internships in AI, NLP, Speech Processing, and Cloud Computing" },
+                { year: "2025", title: "Senior Developer", desc: "Leading ML/NLP projects at IIIT-H and mentoring as ML Mentor at K-HUB" },
               ].map((item, index) => (
                 <motion.div
                   key={item.year}

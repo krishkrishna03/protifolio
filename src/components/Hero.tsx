@@ -66,7 +66,7 @@ const Hero = () => {
           variants={itemVariants}
         >
           <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-teal-400 bg-clip-text text-transparent">
-            Krishna
+            Patnala Sri Krishna Sai
           </span>
         </motion.h1>
 
@@ -82,7 +82,7 @@ const Hero = () => {
             >
               &lt;
             </motion.span>
-            <span>Full Stack Developer</span>
+            <span>AI/ML Engineer | Full Stack Developer (MERN)</span>
             <motion.span
               className="text-teal-400"
               animate={{ opacity: [1, 0.5, 1] }}
@@ -93,7 +93,7 @@ const Hero = () => {
           </div>
           <div className="flex items-center justify-center space-x-2 text-lg">
             <MapPin size={18} className="text-blue-400" />
-            <span>Based in India</span>
+            <span>Kakinada, Andhra Pradesh, India</span>
           </div>
         </motion.div>
 
@@ -101,8 +101,9 @@ const Hero = () => {
           className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed"
           variants={itemVariants}
         >
-          Passionate about creating exceptional digital experiences through innovative web technologies. 
-          Specializing in modern frontend frameworks and scalable backend solutions.
+          Enthusiastic tech learner with a strong foundation in AI/ML, NLP, and Full-Stack Development.
+          Currently interning as a Sr. Developer at IIITH-RCTS and working on ML/NLP projects.
+          Passionate about building intelligent, scalable, and impactful software solutions.
         </motion.p>
 
         <motion.div
@@ -138,8 +139,8 @@ const Hero = () => {
           variants={itemVariants}
         >
           {[
-            { icon: Github, href: "#", label: "GitHub" },
-            { icon: Linkedin, href: "#", label: "LinkedIn" },
+            { icon: Github, href: "https://github.com/krishkrishna03", label: "GitHub" },
+            { icon: Linkedin, href: "https://www.linkedin.com/in/patnala-srikrishna-sai-4531b4229", label: "LinkedIn" },
             { icon: Mail, href: "#contact", label: "Email" },
           ].map((social, index) => (
             <motion.a

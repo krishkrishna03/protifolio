@@ -6,6 +6,18 @@ const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('frontend');
 
   const categories = {
+    aiml: {
+      title: 'AI & Machine Learning',
+      icon: Settings,
+      skills: [
+        { name: 'Machine Learning', level: 90, color: 'from-blue-500 to-blue-600' },
+        { name: 'NLP', level: 85, color: 'from-teal-500 to-teal-600' },
+        { name: 'Computer Vision', level: 82, color: 'from-purple-500 to-purple-600' },
+        { name: 'TensorFlow', level: 85, color: 'from-orange-500 to-orange-600' },
+        { name: 'Scikit-learn', level: 88, color: 'from-blue-600 to-blue-700' },
+        { name: 'Deep Learning', level: 80, color: 'from-pink-500 to-pink-600' },
+      ]
+    },
     frontend: {
       title: 'Frontend Development',
       icon: Code,
@@ -14,61 +26,54 @@ const Skills = () => {
         { name: 'TypeScript', level: 85, color: 'from-blue-600 to-blue-700' },
         { name: 'Tailwind CSS', level: 95, color: 'from-teal-500 to-teal-600' },
         { name: 'Next.js', level: 80, color: 'from-gray-600 to-gray-700' },
-        { name: 'Vue.js', level: 75, color: 'from-green-500 to-green-600' },
+        { name: 'HTML/CSS', level: 95, color: 'from-orange-500 to-orange-600' },
       ]
     },
     backend: {
       title: 'Backend Development',
       icon: Server,
       skills: [
+        { name: 'Python', level: 92, color: 'from-yellow-500 to-yellow-600' },
         { name: 'Node.js', level: 88, color: 'from-green-500 to-green-600' },
-        { name: 'Python', level: 85, color: 'from-yellow-500 to-yellow-600' },
+        { name: 'Django', level: 85, color: 'from-green-600 to-green-700' },
         { name: 'Express.js', level: 90, color: 'from-gray-600 to-gray-700' },
-        { name: 'FastAPI', level: 78, color: 'from-teal-500 to-teal-600' },
-        { name: 'GraphQL', level: 75, color: 'from-pink-500 to-pink-600' },
+        { name: 'Java', level: 80, color: 'from-red-500 to-red-600' },
       ]
     },
-    database: {
-      title: 'Database & Cloud',
-      icon: Database,
+    cloud: {
+      title: 'Cloud & DevOps',
+      icon: Cloud,
       skills: [
-        { name: 'MongoDB', level: 85, color: 'from-green-600 to-green-700' },
-        { name: 'PostgreSQL', level: 80, color: 'from-blue-600 to-blue-700' },
+        { name: 'Google Cloud (GCP)', level: 85, color: 'from-blue-500 to-blue-600' },
         { name: 'AWS', level: 75, color: 'from-orange-500 to-orange-600' },
         { name: 'Docker', level: 78, color: 'from-blue-500 to-blue-600' },
-        { name: 'Redis', level: 70, color: 'from-red-500 to-red-600' },
-      ]
-    },
-    mobile: {
-      title: 'Mobile & Others',
-      icon: Smartphone,
-      skills: [
-        { name: 'React Native', level: 80, color: 'from-blue-500 to-blue-600' },
-        { name: 'Flutter', level: 65, color: 'from-blue-400 to-blue-500' },
+        { name: 'MongoDB', level: 88, color: 'from-green-600 to-green-700' },
         { name: 'Git/GitHub', level: 95, color: 'from-gray-600 to-gray-700' },
-        { name: 'Jest/Testing', level: 75, color: 'from-red-500 to-red-600' },
-        { name: 'Figma', level: 70, color: 'from-purple-500 to-purple-600' },
       ]
     }
   };
 
   const technologies = [
+    { name: 'Python', icon: '🐍', category: 'Language', color: 'from-yellow-400 to-yellow-600' },
+    { name: 'TensorFlow', icon: '🧠', category: 'AI/ML', color: 'from-orange-400 to-orange-600' },
+    { name: 'Scikit-learn', icon: '📊', category: 'ML', color: 'from-blue-400 to-blue-600' },
+    { name: 'OpenCV', icon: '👁️', category: 'Computer Vision', color: 'from-green-400 to-green-600' },
+    { name: 'NLTK', icon: '📝', category: 'NLP', color: 'from-teal-400 to-teal-600' },
     { name: 'React', icon: '⚛️', category: 'Frontend', color: 'from-blue-400 to-blue-600' },
     { name: 'Node.js', icon: '🟢', category: 'Backend', color: 'from-green-400 to-green-600' },
-    { name: 'Python', icon: '🐍', category: 'Backend', color: 'from-yellow-400 to-yellow-600' },
     { name: 'MongoDB', icon: '🍃', category: 'Database', color: 'from-green-500 to-green-700' },
-    { name: 'AWS', icon: '☁️', category: 'Cloud', color: 'from-orange-400 to-orange-600' },
+    { name: 'Django', icon: '🎸', category: 'Backend', color: 'from-green-600 to-green-800' },
+    { name: 'GCP', icon: '☁️', category: 'Cloud', color: 'from-blue-500 to-blue-700' },
     { name: 'Docker', icon: '🐳', category: 'DevOps', color: 'from-blue-500 to-blue-700' },
-    { name: 'TypeScript', icon: '📘', category: 'Language', color: 'from-blue-600 to-blue-800' },
-    { name: 'GraphQL', icon: '🔗', category: 'API', color: 'from-pink-400 to-pink-600' },
-    { name: 'Next.js', icon: '▲', category: 'Framework', color: 'from-gray-600 to-gray-800' },
+    { name: 'Java', icon: '☕', category: 'Language', color: 'from-red-400 to-red-600' },
     { name: 'Express', icon: '🚀', category: 'Backend', color: 'from-gray-500 to-gray-700' },
-    { name: 'PostgreSQL', icon: '🐘', category: 'Database', color: 'from-blue-600 to-blue-800' },
-    { name: 'Redis', icon: '🔴', category: 'Cache', color: 'from-red-500 to-red-700' },
+    { name: 'Pandas', icon: '🐼', category: 'Data Science', color: 'from-blue-600 to-blue-800' },
+    { name: 'NumPy', icon: '🔢', category: 'Data Science', color: 'from-blue-400 to-blue-600' },
+    { name: 'Android', icon: '📱', category: 'Mobile', color: 'from-green-400 to-green-600' },
+    { name: 'Git', icon: '📦', category: 'Version Control', color: 'from-orange-500 to-orange-700' },
     { name: 'Tailwind', icon: '🎨', category: 'CSS', color: 'from-teal-400 to-teal-600' },
-    { name: 'Vue.js', icon: '💚', category: 'Frontend', color: 'from-green-400 to-green-600' },
-    { name: 'Flutter', icon: '🦋', category: 'Mobile', color: 'from-blue-400 to-blue-600' },
-    { name: 'Git', icon: '📝', category: 'Version Control', color: 'from-orange-500 to-orange-700' }
+    { name: 'Power BI', icon: '📈', category: 'Analytics', color: 'from-yellow-400 to-yellow-600' },
+    { name: 'SQL', icon: '🗄️', category: 'Database', color: 'from-blue-600 to-blue-800' }
   ];
 
   return (
