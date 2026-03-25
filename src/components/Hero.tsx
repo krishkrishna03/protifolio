@@ -68,10 +68,7 @@ const Hero = () => {
               Next-gen developer brand
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight text-[var(--text-main)]">
-              I build impactful AI-enabled products with elegant frontend and resilient backend code.
-            </h1>
-
+            
             <div className="h-[46px] text-2xl md:text-3xl font-semibold text-[var(--text-muted)]">
               <span>{typedText}</span>
               <span className="inline-block w-[2px] h-7 bg-cyan-300 animate-pulse ml-2" />
