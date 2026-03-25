@@ -1,181 +1,136 @@
-import React from 'react';
+import  { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Download, Github, Linkedin, Mail, MapPin } from 'lucide-react';
 
 const Hero = () => {
+  const descriptors = [
+    'Software Developer',
+    'AI Researcher',
+    'Full-Stack Developer',
+    'Machine Learning Engineer',
+    'Always Learning New Things',
+  ];
+  const [typedText, setTypedText] = useState('');
+  const [wordIndex, setWordIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const typingSpeed = isDeleting ? 30 : 100;
+    const timeout = setTimeout(() => {
+      const current = descriptors[wordIndex];
+      if (isDeleting) {
+        setTypedText(current.slice(0, charIndex - 1));
+        setCharIndex(charIndex - 1);
+      } else {
+        setTypedText(current.slice(0, charIndex + 1));
+        setCharIndex(charIndex + 1);
+      }
+
+      if (!isDeleting && charIndex === current.length) {
+        setTimeout(() => setIsDeleting(true), 800);
+      } else if (isDeleting && charIndex === 0) {
+        setIsDeleting(false);
+        setWordIndex((prev) => (prev + 1) % descriptors.length);
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [charIndex, descriptors, isDeleting, wordIndex]);
+
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        staggerChildren: 0.2
-      }
-    }
+    visible: { opacity: 1, transition: { duration: 0.8, staggerChildren: 0.18 } },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
-    }
+    hidden: { opacity: 0, y: 35 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.85, ease: 'easeOut' } },
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-teal-600/10" />
-      
-      <motion.div
-        className="container mx-auto px-6 text-center relative z-10"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
+    <section id="home" className="relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(5,30,65,0.95)_0%,_rgba(5,30,65,0.9)_40%,_rgba(2,12,30,0.95)_100%)]"
+      style={{ backgroundColor: 'var(--bg-primary)' }}>
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(5,25,60,0.85),_rgba(0,10,24,0.95))]" />
+
+      <div className="absolute -left-24 top-24 w-72 h-72 rounded-full bg-cyan-400/15 blur-3xl animate-[float_10s_ease-in-out_infinite]" />
+      <div className="absolute right-16 bottom-24 w-80 h-80 rounded-full bg-violet-400/10 blur-3xl animate-[float_14s_ease-in-out_infinite]" />
+
+      <div className="container mx-auto px-6 py-28 relative z-10">
         <motion.div
-          className="mb-8"
-          variants={itemVariants}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
         >
-          <div className="relative inline-block">
-            <motion.img
-              src="Krishna.jpg"
-              alt="Krishna"
-              className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-6 shadow-2xl border-4 border-blue-400/30"
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              transition={{ type: "spring", stiffness: 300, damping: 10 }}
-            />
-            <motion.div
-              className="absolute -inset-2 rounded-full bg-gradient-to-r from-blue-400 to-teal-400 opacity-20 blur-lg"
-              animate={{ 
-                scale: [1, 1.2, 1],
-                rotate: [0, 180, 360]
-              }}
-              transition={{ 
-                duration: 8,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            />
-          </div>
-        </motion.div>
+          <motion.div className="space-y-6 lg:space-y-8" variants={itemVariants}>
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-cyan-200 border border-cyan-300/30 backdrop-blur-sm">
+              <span className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse" />
+              Next-gen developer brand
+            </div>
 
-        <motion.h1
-          className="text-5xl md:text-7xl font-bold mb-6"
-          variants={itemVariants}
-        >
-          <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-teal-400 bg-clip-text text-transparent">
-            Patnala Sri Krishna Sai
-          </span>
-        </motion.h1>
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight text-[var(--text-main)]">
+              I build impactful AI-enabled products with elegant frontend and resilient backend code.
+            </h1>
 
-        <motion.div
-          className="text-xl md:text-2xl text-slate-300 mb-8 space-y-2"
-          variants={itemVariants}
-        >
-          <div className="flex items-center justify-center space-x-2">
-            <motion.span
-              className="text-blue-400"
-              animate={{ opacity: [1, 0.5, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              &lt;
-            </motion.span>
-            <span>AI/ML Engineer | Full Stack Developer (MERN)</span>
-            <motion.span
-              className="text-teal-400"
-              animate={{ opacity: [1, 0.5, 1] }}
-              transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-            >
-              /&gt;
-            </motion.span>
-          </div>
-          <div className="flex items-center justify-center space-x-2 text-lg">
-            <MapPin size={18} className="text-blue-400" />
-            <span>Kakinada, Andhra Pradesh, India</span>
-          </div>
-        </motion.div>
+            <div className="h-[46px] text-2xl md:text-3xl font-semibold text-[var(--text-muted)]">
+              <span>{typedText}</span>
+              <span className="inline-block w-[2px] h-7 bg-cyan-300 animate-pulse ml-2" />
+            </div>
 
-        <motion.p
-          className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed"
-          variants={itemVariants}
-        >
-          Enthusiastic tech learner with a strong foundation in AI/ML, NLP, and Full-Stack Development.
-          Currently interning as a Sr. Developer at IIITH-RCTS and working on ML/NLP projects.
-          Passionate about building intelligent, scalable, and impactful software solutions.
-        </motion.p>
+            <p className="max-w-2xl text-base md:text-xl text-[var(--text-muted)] leading-relaxed">
+              As a confident fresher, I deliver polished user experiences and scalable architectures backed by full-stack engineering, machine learning, and cloud-driven deployment.
+            </p>
 
-        <motion.div
-          className="flex flex-wrap justify-center gap-6 mb-12"
-          variants={itemVariants}
-        >
-          <motion.button
-            className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl font-semibold overflow-hidden shadow-2xl"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
-          >
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-blue-500 to-teal-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            />
-            <span className="relative z-10 flex items-center space-x-2">
-              <Download size={20} />
-              <span>Download Resume</span>
-            </span>
-          </motion.button>
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href="#projects"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-3 font-semibold text-white shadow-lg shadow-cyan-500/30 transition transform duration-300 hover:-translate-y-1 hover:scale-105"
+              >
+                Explore Projects
+                <span className="text-lg">?</span>
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-cyan-400/40 px-8 py-3 font-semibold text-cyan-100 backdrop-blur-md hover:bg-cyan-400/10 transition"
+              >
+                Let�s collaborate
+              </a>
+            </div>
 
-          <motion.button
-            className="px-8 py-4 border-2 border-slate-600 rounded-xl font-semibold hover:border-blue-400 hover:bg-blue-400/10 transition-all duration-300"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View My Work
-          </motion.button>
-        </motion.div>
+            <div className="grid w-full grid-cols-1 sm:grid-cols-3 gap-3">
+              {[
+                { label: 'Completed Projects', value: '30+' },
+                { label: 'AI/ML Internships', value: '5+' },
+                { label: 'Open Source', value: '12+' },
+              ].map((item) => (
+                <motion.div
+                  key={item.label}
+                  whileHover={{ y: -3 }}
+                  className="rounded-2xl border border-white/10 bg-white/10 p-4 text-center backdrop-blur-sm"
+                >
+                  <div className="text-2xl font-extrabold text-[var(--text-main)]">{item.value}</div>
+                  <div className="mt-1 text-sm text-[var(--text-muted)]">{item.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
 
-        <motion.div
-          className="flex justify-center space-x-6"
-          variants={itemVariants}
-        >
-          {[
-            { icon: Github, href: "https://github.com/krishkrishna03", label: "GitHub" },
-            { icon: Linkedin, href: "https://www.linkedin.com/in/patnala-srikrishna-sai-4531b4229", label: "LinkedIn" },
-            { icon: Mail, href: "#contact", label: "Email" },
-          ].map((social, index) => (
-            <motion.a
-              key={social.label}
-              href={social.href}
-              className="group relative p-4 rounded-full bg-slate-800/50 backdrop-blur-sm hover:bg-slate-700/50 transition-all duration-300"
-              whileHover={{ scale: 1.1, y: -2 }}
-              whileTap={{ scale: 0.9 }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 + index * 0.1 }}
-            >
-              <social.icon size={24} className="text-slate-400 group-hover:text-blue-400 transition-colors duration-300" />
-              <motion.div
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/20 to-teal-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          <motion.div variants={itemVariants} className="mx-auto w-full max-w-md">
+            <div className="relative overflow-hidden rounded-3xl border border-cyan-300/20 bg-white/10 shadow-2xl shadow-cyan-900/30 backdrop-blur-xl">
+              <img
+                src="Krishna.jpg"
+                alt="Krishna"
+                loading="lazy"
+                className="h-[420px] w-full object-cover"
               />
-            </motion.a>
-          ))}
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/70" />
+              <div className="absolute bottom-6 left-6 rounded-full bg-slate-900/60 px-5 py-2 text-sm font-semibold text-white backdrop-blur-sm border border-cyan-300/20">
+                AI/ML Intern | Full Stack Engineer
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <div className="w-6 h-10 border-2 border-slate-500 rounded-full flex justify-center">
-            <motion.div
-              className="w-1 h-3 bg-blue-400 rounded-full mt-2"
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
-          </div>
-        </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 };

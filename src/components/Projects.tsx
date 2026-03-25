@@ -1,12 +1,25 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, Eye, Filter } from 'lucide-react';
+import { ExternalLink, Github, Eye, Filter, X } from 'lucide-react';
+
+interface Project {
+  id: number;
+  title: string;
+  category: string;
+  description: string;
+  longDescription: string;
+  image: string;
+  technologies: string[];
+  github: string;
+  demo: string;
+  features: string[];
+}
 
 const Projects = () => {
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState<'all' | 'web' | 'mobile' | 'fullstack' | 'frontend'>('all');
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const categories = ['all', 'web', 'mobile', 'fullstack', "frontend"];
+  const categories = ['all', 'web', 'mobile', 'fullstack', 'frontend'];
 
   const projects = [
     {
@@ -54,18 +67,6 @@ const Projects = () => {
     },
 
     {
-      id: 2,
-      title: "Learning Management System",
-      category: "fullstack",
-      description: "A comprehensive LMS with course creation, student progress tracking, and interactive learning tools.",
-      longDescription: "Developed a full-featured learning management system with course authoring tools, video streaming, interactive quizzes, student progress tracking, discussion forums, and certificate generation. Includes mobile-responsive design and offline content access.",
-      image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "Node.js", "PostgreSQL", "AWS S3", "WebRTC"],
-      github: "#",
-      demo: "#",
-      features: ["Course Authoring", "Video Streaming", "Progress Tracking", "Interactive Quizzes", "Certificate Generation"]
-    },
-    {
       id: 3,
       title: "Pong Game",
       category: "frontend",
@@ -112,43 +113,13 @@ const Projects = () => {
         "Framer Motion",
         "Axios"
       ],
-      github: "#", // Replace with actual GitHub repo URL
+      github: "https://github.com/krishkrishna03/NotePad.git", // Replace with actual GitHub repo URL
       demo: "https://notepadk.netlify.app/", // Replace with deployed demo link if available
       features: [
         "Rich Text Editor", "JWT Authentication", "Private Notes per User", "Category Organization", "Search & Filter", "Auto-save", "Responsive Design", "Dark Mode", "Real-time Updates"
       ]
-    }, {
-      id: 6,
-      title: "Productivity Hub",
-      category: "fullstack",
-      description: "A modern productivity dashboard with tools like summarizer, speech-to-text, sentiment analysis, and task manager.",
-      longDescription: "Productivity Hub is a responsive and elegant productivity web app built with React 18 + TypeScript and Tailwind CSS. It includes powerful tools such as Text Summarizer, Text-to-Speech, Speech-to-Text, Sentiment Analysis, and Task Manager, all working client-side with Web APIs and Local Storage. Designed with accessibility and performance in mind, it features modern UI design, gradient themes, real-time updates, and browser compatibility. Built with Vite, it boasts fast loading and is ready for deployment.",
-      image: "pro5.png", // Replace with actual image file name or path
-      technologies: [
-        "React 18",
-        "TypeScript",
-        "Tailwind CSS",
-        "Vite",
-        "React Router",
-        "Lucide React",
-        "Web Speech API",
-        "Local Storage"
-      ],
-      github: "#", // Replace with actual GitHub repo URL
-      demo: "https://productivityhubk.netlify.app/", // Replace with deployed URL if hosted (e.g., Netlify or Vercel)
-      features: [
-        "Text Summarizer with File Upload",
-        "Text-to-Speech with Voice Settings",
-        "Real-time Speech-to-Text",
-        "Sentiment Analysis with Visual Output",
-        "Task Manager with Priority & Due Dates",
-        "Responsive Modern UI",
-        "Smooth Animations & Gradient Themes",
-        "Client-side Storage and Privacy Focused",
-        "Accessibility & ARIA Compliance"
-      ]
-    }
-
+    },
+    
 
 
   ];
@@ -158,7 +129,7 @@ const Projects = () => {
     : projects.filter(project => project.category === selectedCategory);
 
   return (
-    <section id="projects" className="py-20 relative">
+    <section id="projects" className="py-20 relative bg-[var(--bg-primary)] text-[var(--text-main)]">
       <div className="container mx-auto px-6">
         <motion.div
           className="text-center mb-16"
@@ -168,11 +139,11 @@ const Projects = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            My <span className="bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">Projects</span>
+            Featured <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Works</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-teal-400 mx-auto rounded-full" />
-          <p className="text-slate-400 mt-6 max-w-2xl mx-auto">
-            A showcase of my recent work and the technologies I've used to build them
+          <div className="mx-auto mb-4 w-28 h-1 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500" />
+          <p className="text-slate-300 mt-4 max-w-3xl mx-auto text-sm md:text-base">
+            Handpicked selected projects with modern architecture, polished UX, and real-world impact. Filter by domain to explore the stack behind each build.
           </p>
         </motion.div>
 
@@ -212,12 +183,12 @@ const Projects = () => {
             {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
-                className="group relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-2xl border border-slate-700/50 backdrop-blur-sm overflow-hidden"
-                initial={{ opacity: 0, scale: 0.9 }}
+                className="group relative bg-slate-900/70 border border-slate-700/50 rounded-3xl backdrop-blur-xl shadow-2xl shadow-slate-950/30 overflow-hidden"
+                initial={{ opacity: 0, scale: 0.93 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -10, scale: 1.02 }}
+                exit={{ opacity: 0, scale: 0.93 }}
+                transition={{ delay: index * 0.08 }}
+                whileHover={{ y: -8, scale: 1.01 }}
                 layout
               >
                 {/* Project Image */}
@@ -225,6 +196,7 @@ const Projects = () => {
                   <motion.img
                     src={project.image}
                     alt={project.title}
+                    loading="lazy"
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />

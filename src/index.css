@@ -1,3 +1,131 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --bg-primary: #061d45;
+  --bg-accent: #0e2e66;
+  --text-main: #e3efff;
+  --text-muted: #a4c8ff;
+  --card-bg: rgba(15, 31, 72, 0.72);
+  --border: rgba(95, 143, 226, 0.35);
+  --shadow: 0 20px 60px rgba(0, 24, 65, 0.55);
+}
+
+.light {
+  --bg-primary: #061d45;
+  --bg-accent: #0a2f6f;
+  --text-main: #e7f3ff;
+  --text-muted: #a9c8ff;
+  --card-bg: rgba(10, 33, 77, 0.68);
+  --border: rgba(80, 131, 230, 0.4);
+  --shadow: 0 18px 60px rgba(3, 16, 56, 0.55);
+}
+
+.app-root {
+  background: radial-gradient(circle at top left, #2a6fb8 0%, #082146 42%, #040e23 100%);
+  color: var(--text-main);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-main);
+  min-height: 100vh;
+  margin: 0;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.app-root,
+.main-theme {
+  background: var(--bg-primary);
+  color: var(--text-main);
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.theme-card {
+  background: var(--card-bg);
+  border-color: var(--border);
+  color: var(--text-main);
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.theme-text-muted {
+  color: var(--text-muted);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #2f9cf2, #2cc2d4);
+  border-radius: 999px;
+}
+
+#app-loading {
+  transition: opacity 0.35s ease;
+}
+
+/* Quick global override to honor dark/light mode for pre-defined Tailwind color classes */
+.light .text-white,
+.light .text-slate-200,
+.light .text-slate-300,
+.light .text-slate-400,
+.light .text-slate-500,
+.light .text-slate-600,
+.light .text-slate-700,
+.light .text-slate-800,
+.light .text-slate-900,
+.light .text-cyan-300,
+.light .text-blue-300,
+.light .text-teal-300,
+.light .text-blue-400 {
+  color: var(--text-main) !important;
+}
+
+.light .bg-slate-900\/90,
+.light .bg-slate-900\/50,
+.light .bg-slate-800\/70,
+.light .bg-slate-800\/50,
+.light .bg-slate-800\/30,
+.light .bg-slate-700\/50,
+.light .bg-slate-700,
+.light .bg-slate-800,
+.light .bg-slate-900,
+.light .border-slate-700\/50,
+.light .border-slate-600,
+.light .border-slate-700,
+.light .border-slate-600\/50 {
+  background-color: var(--card-bg) !important;
+  border-color: var(--border) !important;
+}
+
+.dark .text-slate-900,
+.dark .text-slate-800,
+.dark .text-slate-700,
+.dark .text-slate-600,
+.dark .text-slate-500,
+.dark .text-slate-400,
+.dark .text-slate-300,
+.dark .text-slate-200,
+.dark .text-slate-100,
+.dark .text-cyan-300,
+.dark .text-blue-300,
+.dark .text-teal-300 {
+  color: var(--text-main) !important;
+}
+
+.dark .bg-slate-100,
+.dark .bg-slate-200,
+.dark .bg-slate-300,
+.dark .bg-slate-50,
+.dark .bg-white {
+  background-color: var(--bg-accent) !important;
+  border-color: var(--border) !important;
+}
+

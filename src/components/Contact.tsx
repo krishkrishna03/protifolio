@@ -58,7 +58,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 relative">
+    <section id="contact" className="py-20 relative bg-[radial-gradient(circle_at_top,_#0b1b2e_0%,_#020617_45%,_#020617_100%)]">
       <div className="container mx-auto px-6">
         <motion.div
           className="text-center mb-16"
@@ -67,12 +67,12 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Get In <span className="bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">Touch</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            Let’s <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Collaborate</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-teal-400 mx-auto rounded-full" />
-          <p className="text-slate-400 mt-6 max-w-2xl mx-auto">
-            Open to AI/ML Engineering, Data Science, Software Development, and Full-Stack roles. Let's collaborate on building something amazing!
+          <div className="mx-auto mb-4 h-1 w-28 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500" />
+          <p className="text-slate-300 mt-4 max-w-2xl mx-auto text-sm md:text-base">
+            Ready to build AI-first products and scalable digital experiences? Reach out and we’ll architect the next big thing together.
           </p>
         </motion.div>
 

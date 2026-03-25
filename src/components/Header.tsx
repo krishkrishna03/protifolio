@@ -42,7 +42,7 @@ const Header = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="container mx-auto px-6 py-4 theme-card rounded-2xl shadow-lg">
         <div className="flex justify-between items-center">
           <motion.div
             className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent"
@@ -53,7 +53,7 @@ const Header = () => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.href}
@@ -73,13 +73,16 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
+          <div className="flex items-center gap-2">
+            {/* mobile menu button */}
           <motion.button
-            className="md:hidden p-2 rounded-lg bg-slate-800/50 backdrop-blur-sm"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            whileTap={{ scale: 0.95 }}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </motion.button>
+              className="md:hidden p-2 rounded-lg bg-slate-800/50 backdrop-blur-sm"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              whileTap={{ scale: 0.95 }}
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </motion.button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
