@@ -57,29 +57,6 @@ const skillCategories = [
   },
 ];
 
-const technologies = [
-  { name: 'Python', icon: '🐍', category: 'Language', color: 'from-yellow-400 to-yellow-600' },
-  { name: 'TensorFlow', icon: '🧠', category: 'AI/ML', color: 'from-orange-400 to-orange-600' },
-  { name: 'Scikit-learn', icon: '📊', category: 'ML', color: 'from-blue-400 to-blue-600' },
-  { name: 'OpenCV', icon: '👁️', category: 'Computer Vision', color: 'from-green-400 to-green-600' },
-  { name: 'NLTK', icon: '📝', category: 'NLP', color: 'from-teal-400 to-teal-600' },
-  { name: 'React', icon: '⚛️', category: 'Frontend', color: 'from-blue-400 to-blue-600' },
-  { name: 'Node.js', icon: '🟢', category: 'Backend', color: 'from-green-400 to-green-600' },
-  { name: 'MongoDB', icon: '🍃', category: 'Database', color: 'from-green-500 to-green-700' },
-  { name: 'Django', icon: '🎸', category: 'Backend', color: 'from-green-600 to-green-800' },
-  { name: 'GCP', icon: '☁️', category: 'Cloud', color: 'from-blue-500 to-blue-700' },
-  { name: 'Docker', icon: '🐳', category: 'DevOps', color: 'from-blue-500 to-blue-700' },
-  { name: 'Java', icon: '☕', category: 'Language', color: 'from-red-400 to-red-600' },
-  { name: 'Express', icon: '🚀', category: 'Backend', color: 'from-gray-500 to-gray-700' },
-  { name: 'Pandas', icon: '🐼', category: 'Data Science', color: 'from-blue-600 to-blue-800' },
-  { name: 'NumPy', icon: '🔢', category: 'Data Science', color: 'from-blue-400 to-blue-600' },
-  { name: 'Android', icon: '📱', category: 'Mobile', color: 'from-green-400 to-green-600' },
-  { name: 'Git', icon: '📦', category: 'Version Control', color: 'from-orange-500 to-orange-700' },
-  { name: 'Tailwind', icon: '🎨', category: 'CSS', color: 'from-teal-400 to-teal-600' },
-  { name: 'Power BI', icon: '📈', category: 'Analytics', color: 'from-yellow-400 to-yellow-600' },
-  { name: 'SQL', icon: '🗄️', category: 'Database', color: 'from-blue-600 to-blue-800' },
-];
-
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('frontend');
 
@@ -182,31 +159,6 @@ const Skills = () => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
-
-        <motion.div
-          className="mt-14 rounded-2xl border border-slate-700/50 bg-slate-900/40 p-6 backdrop-blur-sm"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-xl font-bold text-white mb-3">Technology Stack</h3>
-          <p className="text-slate-400 mb-6">High-impact tools and frameworks I use daily to build production-ready engineering systems.</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-            {technologies.map((tech) => (
-              <motion.div
-                key={tech.name}
-                className="rounded-lg bg-slate-800/60 px-3 py-2 text-center border border-slate-700/60"
-                whileHover={{ y: -3, scale: 1.03 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="text-xl mb-1">{tech.icon}</div>
-                <div className="text-sm font-semibold text-white">{tech.name}</div>
-              <div className="text-xs text-slate-400">{tech.category}</div>
-              </motion.div>
-            ))}
-          </div>
         </motion.div>
       </div>
     </section>
