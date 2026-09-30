@@ -1,6 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Building, Calendar, MapPin, Briefcase, ChevronDown, GraduationCap } from 'lucide-react';
+import {
+  Building2,
+  Calendar,
+  MapPin,
+  Briefcase,
+  ChevronRight,
+  GraduationCap,
+  Sparkles,
+  CheckCircle2,
+} from 'lucide-react';
 
 interface ExperienceItem {
   title: string;
@@ -12,6 +21,7 @@ interface ExperienceItem {
   achievements: string[];
   technologies: string[];
   accent: string;
+  dotColor: string;
 }
 
 const Experience = () => {
@@ -34,6 +44,7 @@ const Experience = () => {
       ],
       technologies: ['Python', 'TensorFlow', 'Scikit-learn', 'Pandas', 'Power BI', 'NLP', 'Data Science'],
       accent: 'from-amber-500 to-orange-500',
+      dotColor: 'bg-amber-400',
     },
     {
       title: 'Senior Developer Intern | Research Intern',
@@ -51,6 +62,7 @@ const Experience = () => {
       ],
       technologies: ['Python', 'NLP', 'Machine Learning', 'React', 'Node.js', 'MongoDB', 'TensorFlow'],
       accent: 'from-blue-500 to-cyan-500',
+      dotColor: 'bg-blue-400',
     },
     {
       title: 'Django Intern',
@@ -68,6 +80,7 @@ const Experience = () => {
       ],
       technologies: ['Python', 'Django', 'PostgreSQL', 'REST APIs', 'Git'],
       accent: 'from-emerald-500 to-green-600',
+      dotColor: 'bg-emerald-400',
     },
     {
       title: 'Android Developer',
@@ -85,6 +98,7 @@ const Experience = () => {
       ],
       technologies: ['Java', 'Android SDK', 'XML', 'REST APIs', 'Git'],
       accent: 'from-teal-500 to-cyan-600',
+      dotColor: 'bg-teal-400',
     },
     {
       title: 'Data Analyst',
@@ -102,6 +116,7 @@ const Experience = () => {
       ],
       technologies: ['Python', 'Pandas', 'NumPy', 'Power BI', 'Excel', 'SQL', 'Matplotlib'],
       accent: 'from-yellow-500 to-amber-600',
+      dotColor: 'bg-yellow-400',
     },
     {
       title: 'Cloud Computing Intern',
@@ -119,6 +134,7 @@ const Experience = () => {
       ],
       technologies: ['GCP', 'Docker', 'Kubernetes', 'CI/CD', 'Cloud Storage'],
       accent: 'from-sky-500 to-blue-600',
+      dotColor: 'bg-sky-400',
     },
     {
       title: 'Java Full Stack Developer',
@@ -136,6 +152,7 @@ const Experience = () => {
       ],
       technologies: ['Java', 'Spring Boot', 'MySQL', 'HTML/CSS', 'JavaScript', 'REST APIs'],
       accent: 'from-red-500 to-rose-600',
+      dotColor: 'bg-red-400',
     },
     {
       title: 'Speech Processing Intern',
@@ -153,6 +170,7 @@ const Experience = () => {
       ],
       technologies: ['Python', 'SpeechRecognition', 'PyDub', 'NLTK', 'Pandas', 'Matplotlib'],
       accent: 'from-teal-400 to-teal-600',
+      dotColor: 'bg-teal-400',
     },
     {
       title: 'Web Development Intern',
@@ -170,6 +188,7 @@ const Experience = () => {
       ],
       technologies: ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js', 'Express', 'MongoDB'],
       accent: 'from-blue-400 to-indigo-500',
+      dotColor: 'bg-blue-400',
     },
     {
       title: 'AI/ML Intern',
@@ -187,6 +206,7 @@ const Experience = () => {
       ],
       technologies: ['Python', 'TensorFlow', 'Scikit-learn', 'Pandas', 'NumPy', 'Jupyter'],
       accent: 'from-orange-500 to-red-500',
+      dotColor: 'bg-orange-400',
     },
     {
       title: 'Machine Learning Mentor',
@@ -204,6 +224,7 @@ const Experience = () => {
       ],
       technologies: ['Python', 'Scikit-learn', 'TensorFlow', 'Jupyter', 'Data Science'],
       accent: 'from-fuchsia-500 to-pink-600',
+      dotColor: 'bg-fuchsia-400',
     },
     {
       title: 'Summer Intern',
@@ -221,6 +242,7 @@ const Experience = () => {
       ],
       technologies: ['Python', 'Scikit-learn', 'TensorFlow', 'OpenCV', 'Pandas'],
       accent: 'from-green-500 to-emerald-600',
+      dotColor: 'bg-green-400',
     },
     {
       title: 'Junior Developer Intern | Research Intern',
@@ -238,6 +260,7 @@ const Experience = () => {
       ],
       technologies: ['Python', 'Machine Learning', 'React', 'Node.js', 'MongoDB'],
       accent: 'from-blue-500 to-blue-700',
+      dotColor: 'bg-blue-500',
     },
   ];
 
@@ -263,9 +286,11 @@ const Experience = () => {
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
         <div className="absolute bottom-40 right-1/4 w-72 h-72 bg-teal-500/8 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-6 relative">
+        {/* Header */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 40 }}
@@ -282,133 +307,152 @@ const Experience = () => {
           </h2>
           <div className="mx-auto w-24 h-1 bg-gradient-to-r from-blue-400 to-teal-400 rounded-full" />
           <p className="text-slate-300 mt-6 max-w-2xl mx-auto text-sm md:text-base">
-            {experiences.length} roles across research, full-stack, mobile, cloud, and data science — a journey of continuous learning.
+            {experiences.length} roles across research, full-stack, mobile, cloud, and data science — a journey of continuous learning and growth.
           </p>
         </motion.div>
 
-        {/* Vertical Timeline */}
-        <div className="max-w-4xl mx-auto">
-          <div className="relative pl-8 md:pl-12">
-            {/* Timeline line */}
-            <div className="absolute left-3 md:left-4 top-2 bottom-2 w-0.5 bg-gradient-to-b from-blue-400 via-cyan-400 to-teal-500" />
-
-            {experiences.map((exp, index) => {
-              const isOpen = expandedIndex === index;
-              return (
-                <motion.div
-                  key={index}
-                  className="relative mb-6"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: Math.min(index * 0.05, 0.3) }}
-                  viewport={{ once: true }}
+        {/* Experience List — Split Layout */}
+        <div className="max-w-5xl mx-auto space-y-3">
+          {experiences.map((exp, index) => {
+            const isOpen = expandedIndex === index;
+            const isCurrent = index === 0;
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: Math.min(index * 0.04, 0.2) }}
+                viewport={{ once: true }}
+              >
+                <div
+                  className={`group rounded-2xl border transition-all duration-300 ${
+                    isOpen
+                      ? 'border-blue-400/30 bg-slate-800/50 shadow-xl shadow-blue-500/5'
+                      : 'border-slate-700/40 bg-slate-800/20 hover:border-slate-600/50 hover:bg-slate-800/35'
+                  }`}
                 >
-                  {/* Timeline dot */}
-                  <div className={`absolute -left-[1.35rem] md:-left-[1.65rem] top-6 w-4 h-4 rounded-full bg-gradient-to-br ${exp.accent} ring-4 ring-[var(--bg-primary)] z-10`} />
-
-                  {/* Card */}
-                  <div
-                    className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
-                      isOpen
-                        ? 'border-blue-400/40 bg-slate-800/60 shadow-xl shadow-blue-500/10'
-                        : 'border-slate-700/50 bg-slate-800/30 hover:border-slate-600/60 hover:bg-slate-800/45'
-                    }`}
+                  {/* Compact Row */}
+                  <button
+                    onClick={() => setExpandedIndex(isOpen ? null : index)}
+                    className="w-full flex items-center gap-4 p-4 md:p-5 text-left"
                   >
-                    <button
-                      onClick={() => setExpandedIndex(isOpen ? null : index)}
-                      className="w-full text-left p-5 md:p-6"
+                    {/* Accent bar */}
+                    <div className={`w-1 h-12 rounded-full bg-gradient-to-b ${exp.accent} flex-shrink-0`} />
+
+                    {/* Content */}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap items-center gap-2 mb-1">
+                        <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full text-white bg-gradient-to-r ${exp.accent}`}>
+                          {exp.type}
+                        </span>
+                        {isCurrent && (
+                          <span className="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-green-500/20 text-green-300 border border-green-400/30">
+                            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                            Current
+                          </span>
+                        )}
+                      </div>
+                      <h3 className="text-base md:text-lg font-bold text-white leading-snug truncate">
+                        {exp.title}
+                      </h3>
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-0.5 mt-1 text-xs md:text-sm text-slate-400">
+                        <span className="flex items-center gap-1.5 text-blue-300 font-medium">
+                          <Building2 size={13} />
+                          {exp.company}
+                        </span>
+                        <span className="hidden sm:flex items-center gap-1.5">
+                          <Calendar size={13} />
+                          {exp.period}
+                        </span>
+                        <span className="hidden md:flex items-center gap-1.5">
+                          <MapPin size={13} />
+                          {exp.location}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Expand arrow */}
+                    <motion.div
+                      animate={{ rotate: isOpen ? 90 : 0 }}
+                      transition={{ duration: 0.25 }}
+                      className="flex-shrink-0 p-1.5 rounded-lg bg-slate-700/40 text-slate-400 group-hover:text-slate-200"
                     >
-                      <div className="flex flex-wrap items-start justify-between gap-3">
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-semibold text-white bg-gradient-to-r ${exp.accent}`}>
-                              {exp.type}
-                            </span>
-                            {index === 0 && (
-                              <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-green-500/20 text-green-300 border border-green-400/30">
-                                Current
-                              </span>
-                            )}
-                          </div>
-                          <h3 className="text-lg md:text-xl font-bold text-white leading-snug">
-                            {exp.title}
-                          </h3>
-                          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 text-sm text-slate-400">
-                            <span className="flex items-center gap-1.5 text-blue-300 font-medium">
-                              <Building size={14} />
-                              {exp.company}
-                            </span>
+                      <ChevronRight size={18} />
+                    </motion.div>
+                  </button>
+
+                  {/* Expanded Content */}
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.35, ease: 'easeInOut' }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-4 md:px-5 pb-5 pt-1 space-y-5">
+                          {/* Mobile-only meta */}
+                          <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-400 sm:hidden">
                             <span className="flex items-center gap-1.5">
-                              <Calendar size={14} />
+                              <Calendar size={13} />
                               {exp.period}
                             </span>
                             <span className="flex items-center gap-1.5">
-                              <MapPin size={14} />
+                              <MapPin size={13} />
                               {exp.location}
                             </span>
                           </div>
-                        </div>
-                        <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
-                          <ChevronDown size={22} className="text-slate-400 flex-shrink-0" />
-                        </motion.div>
-                      </div>
 
-                      <p className="text-slate-400 text-sm mt-3 leading-relaxed">
-                        {exp.description}
-                      </p>
-                    </button>
+                          {/* Description */}
+                          <p className="text-slate-300 text-sm leading-relaxed">{exp.description}</p>
 
-                    <AnimatePresence initial={false}>
-                      {isOpen && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.35, ease: 'easeInOut' }}
-                          className="overflow-hidden"
-                        >
-                          <div className="px-5 md:px-6 pb-6 space-y-5">
-                            {/* Achievements */}
-                            <div>
-                              <h4 className="text-sm font-semibold text-white mb-3 uppercase tracking-wider">Key Achievements</h4>
-                              <div className="grid sm:grid-cols-2 gap-2">
-                                {exp.achievements.map((achievement, i) => (
-                                  <div key={i} className="flex items-start gap-2 text-sm text-slate-400">
-                                    <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${exp.accent} mt-2 flex-shrink-0`} />
-                                    <span>{achievement}</span>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-
-                            {/* Technologies */}
-                            <div>
-                              <h4 className="text-sm font-semibold text-white mb-3 uppercase tracking-wider">Technologies</h4>
-                              <div className="flex flex-wrap gap-2">
-                                {exp.technologies.map((tech) => (
-                                  <span
-                                    key={tech}
-                                    className="px-3 py-1 bg-slate-700/50 text-slate-300 rounded-lg text-xs font-medium border border-slate-600/50"
-                                  >
-                                    {tech}
-                                  </span>
-                                ))}
-                              </div>
+                          {/* Achievements */}
+                          <div>
+                            <h4 className="flex items-center gap-2 text-xs font-semibold text-white uppercase tracking-wider mb-3">
+                              <CheckCircle2 size={14} className="text-blue-400" />
+                              Key Achievements
+                            </h4>
+                            <div className="grid sm:grid-cols-2 gap-2">
+                              {exp.achievements.map((achievement, i) => (
+                                <div key={i} className="flex items-start gap-2 text-sm text-slate-400">
+                                  <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${exp.accent} mt-2 flex-shrink-0`} />
+                                  <span>{achievement}</span>
+                                </div>
+                              ))}
                             </div>
                           </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+
+                          {/* Technologies */}
+                          <div>
+                            <h4 className="flex items-center gap-2 text-xs font-semibold text-white uppercase tracking-wider mb-3">
+                              <Sparkles size={14} className="text-cyan-400" />
+                              Technologies
+                            </h4>
+                            <div className="flex flex-wrap gap-2">
+                              {exp.technologies.map((tech) => (
+                                <span
+                                  key={tech}
+                                  className="px-2.5 py-1 bg-slate-700/40 text-slate-300 rounded-lg text-xs font-medium border border-slate-600/40"
+                                >
+                                  {tech}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* Education Section */}
         <motion.div
-          className="mt-20"
+          className="mt-24"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -425,7 +469,7 @@ const Experience = () => {
             {education.map((edu, index) => (
               <motion.div
                 key={index}
-                className="group p-6 bg-slate-800/40 rounded-2xl border border-slate-700/50 backdrop-blur-sm hover:bg-slate-800/55 transition-all duration-300"
+                className="group p-6 bg-slate-800/40 rounded-2xl border border-slate-700/50 backdrop-blur-sm hover:bg-slate-800/55 hover:border-slate-600/60 transition-all duration-300"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.15 }}

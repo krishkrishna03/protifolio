@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Lightbulb, Target, Users } from 'lucide-react';
+import { Code, Lightbulb, Target, Users, Compass, BookOpen, FlaskConical, BrainCircuit, TrendingUp, GraduationCap } from 'lucide-react';
 
 const About = () => {
   const stats = [
@@ -43,10 +43,10 @@ const About = () => {
               and the MERN stack, I transform complex problems into innovative applications that make a real impact.
             </p>
             <p className="text-lg text-slate-400 leading-relaxed">
-              Currently working as a Senior Developer at IIIT Hyderabad's RCTS Lab, I've completed multiple
-              internships across AI/ML, Cloud Computing, and Full-Stack Development. My journey is driven by
-              curiosity, continuous learning, and a passion for creating solutions that bridge technology and
-              real-world challenges.
+              Currently working as an AI/ML/DA/DS Technical Trainer at Innoknowvex in Bangalore, I've also
+              completed 12+ internships across AI/ML, Cloud Computing, and Full-Stack Development, and led
+              research at IIIT Hyderabad's RCTS Lab. My journey is driven by curiosity, continuous learning,
+              and a passion for creating solutions — and now, for teaching the next generation.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
@@ -96,43 +96,88 @@ const About = () => {
           </motion.div>
         </div>
 
-        {/* Timeline */}
+        {/* Journey — Stepper */}
         <motion.div
-          className="mt-20"
-          initial={{ opacity: 0, y: 50 }}
+          className="mt-24"
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-3xl font-bold text-center mb-12">My Journey</h3>
-          <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/10 border border-blue-400/30 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-blue-300 mb-4">
+              <Compass size={14} />
+              Milestones
+            </div>
+            <h3 className="text-3xl md:text-4xl font-bold">
+              My <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">Journey</span>
+            </h3>
+            <div className="mx-auto mt-4 w-20 h-1 rounded-full bg-gradient-to-r from-blue-400 to-teal-400" />
+          </div>
+
+          {/* Horizontal stepper on desktop, vertical on mobile */}
+          <div className="max-w-5xl mx-auto">
             <div className="relative">
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-400 to-teal-400 rounded-full" />
-              
-              {[
-                { year: "2021", title: "Started B.Tech in AI", desc: "Began Computer Science (AI) at KIET, focusing on Python and ML fundamentals" },
-                { year: "2023", title: "Research at IIIT-H", desc: "Junior Developer Intern at RCTS Lab, started AI/ML journey" },
-                { year: "2024", title: "AI/ML Specialist", desc: "Multiple internships in AI, NLP, Speech Processing, and Cloud Computing" },
-                { year: "2025", title: "Senior Developer", desc: "Leading ML/NLP projects at IIIT-H and mentoring as ML Mentor at K-HUB" },
-              ].map((item, index) => (
-                <motion.div
-                  key={item.year}
-                  className={`relative flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'} mb-12`}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
-                    <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700/50 backdrop-blur-sm">
-                      <div className="text-blue-400 font-bold text-lg">{item.year}</div>
-                      <div className="text-white font-semibold mb-2">{item.title}</div>
-                      <div className="text-slate-400 text-sm">{item.desc}</div>
-                    </div>
-                  </div>
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-400 rounded-full border-4 border-slate-900" />
-                </motion.div>
-              ))}
+              {/* Connecting line — desktop */}
+              <div className="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500/40 via-cyan-400/40 to-teal-400/40" />
+              {/* Connecting line — mobile */}
+              <div className="md:hidden absolute left-5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500/40 via-cyan-400/40 to-teal-400/40" />
+
+              <div className="grid md:grid-cols-5 gap-6 md:gap-2">
+                {[
+                  { year: "2021", title: "Started B.Tech", desc: "Began Computer Science (AI) at KIET — Python & ML fundamentals", icon: BookOpen },
+                  { year: "2023", title: "Research at IIIT-H", desc: "Junior Developer Intern at RCTS Lab — kicked off AI/ML research", icon: FlaskConical },
+                  { year: "2024", title: "AI/ML Specialist", desc: "12+ internships across NLP, Speech, Cloud, and Full-Stack", icon: BrainCircuit },
+                  { year: "2025", title: "Senior Developer", desc: "Led ML/NLP projects at IIIT-H, mentored 50+ students at K-HUB", icon: TrendingUp },
+                  { year: "2026", title: "Technical Trainer", desc: "AI/ML/DA/DS Trainer at Innoknowvex, Bangalore — present", icon: GraduationCap },
+                ].map((item, index) => {
+                  const Icon = item.icon;
+                  const isLatest = index === 4;
+                  return (
+                    <motion.div
+                      key={item.year}
+                      className="relative flex md:flex-col items-start md:items-center gap-4 md:gap-0 pl-12 md:pl-0"
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.12 }}
+                      viewport={{ once: true }}
+                    >
+                      {/* Node */}
+                      <div className="relative flex-shrink-0 md:mb-4">
+                        <motion.div
+                          className={`relative z-10 w-10 h-10 rounded-full flex items-center justify-center border-2 ${
+                            isLatest
+                              ? 'bg-gradient-to-br from-amber-400 to-orange-500 border-amber-300/50 shadow-lg shadow-amber-500/30'
+                              : 'bg-slate-800 border-blue-400/40'
+                          }`}
+                          whileHover={{ scale: 1.15 }}
+                        >
+                          <Icon size={18} className={isLatest ? 'text-white' : 'text-blue-300'} />
+                          {isLatest && (
+                            <span className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-green-400 ring-2 ring-slate-900 animate-pulse" />
+                          )}
+                        </motion.div>
+                      </div>
+
+                      {/* Content */}
+                      <div className="md:text-center flex-1 md:px-2">
+                        <div className={`text-lg font-bold ${isLatest ? 'text-amber-300' : 'text-blue-300'}`}>
+                          {item.year}
+                        </div>
+                        <div className="text-white font-semibold text-sm md:text-base mt-0.5 leading-snug">
+                          {item.title}
+                        </div>
+                        <div className="text-slate-400 text-xs mt-1.5 leading-relaxed hidden md:block">
+                          {item.desc}
+                        </div>
+                        <div className="text-slate-400 text-sm mt-1.5 leading-relaxed md:hidden">
+                          {item.desc}
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </motion.div>
